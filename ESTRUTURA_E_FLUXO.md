@@ -11,8 +11,6 @@
 projetoFinalDB/
 │
 ├── world_ampas_oscar_winner_demographics.csv   ← dataset original
-├── Projetobd.pdf                               ← enunciado do projeto
-├── gerar_slides.py                             ← script gerador da apresentação
 │
 ├── Documentacao/                               ← entregas do projeto (código, SQL, gráficos)
 │   ├── Etapa0_Exploracao/
@@ -26,9 +24,7 @@ projetoFinalDB/
 │   ├── 00_rota_do_projeto.md
 │   ├── 01_entidades_regras.md
 │   ├── 02_modelo_relacional_normalizacao.md
-│   ├── grafico_gols_exploracao.png             ← rastro do dataset anterior (Brasileirão)
 │   ├── grafico_oscar_exploracao.png
-│   └── brasileirao_limpo.csv                  ← rastro do dataset anterior (descartado)
 │
 └── .vscode/                                    ← configurações do editor (ignorar)
 ```
