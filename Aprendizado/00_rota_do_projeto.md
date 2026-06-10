@@ -28,16 +28,16 @@ projetoFinalDB/
 | 4 | Identificar entidades e relacionamentos | ✅ Concluído |
 | 5 | Definir regras de integridade | ✅ Concluído |
 | 6 | Criar diagrama ER/EER | ✅ Concluído |
-| 7 | Converter ER para modelo relacional | ⬜ Pendente |
-| 8 | Normalizar o esquema | ⬜ Pendente |
-| 9 | Implementar fisicamente o banco (DDL SQL) | ⬜ Pendente |
-| 10 | Criar pipeline de carga (Python) | ⬜ Pendente |
-| 11 | Validar a carga | ⬜ Pendente |
-| 12 | Formular perguntas investigativas | ⬜ Pendente |
-| 13 | Criar consultas SQL | ⬜ Pendente |
-| 14 | Produzir visualizações e EDA | ⬜ Pendente |
-| 15 | Documentar o projeto | ⬜ Pendente |
-| 16 | Preparar apresentação | ⬜ Pendente |
+| 7 | Converter ER para modelo relacional | ✅ Concluído |
+| 8 | Normalizar o esquema | ✅ Concluído |
+| 9 | Implementar fisicamente o banco (DDL SQL) | ✅ Concluído |
+| 10 | Criar pipeline de carga (Python) | ✅ Concluído |
+| 11 | Validar a carga | ✅ Concluído |
+| 12 | Formular perguntas investigativas | ✅ Concluído |
+| 13 | Criar consultas SQL | ✅ Concluído |
+| 14 | Produzir visualizações e EDA | ✅ Concluído |
+| 15 | Documentar o projeto | ✅ Concluído |
+| 16 | Preparar apresentação | ✅ Concluído |
 
 ## Decisões Tomadas
 
