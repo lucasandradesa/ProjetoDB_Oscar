@@ -1,0 +1,15 @@
+services:
+  oscar-db:
+    image: postgres:16
+    container_name: oscar-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: brasil123
+      POSTGRES_DB: oscar
+    ports:
+      - "5432:5432"
+    volumes:
+      - oscar_data:/var/lib/postgresql/data
+
+volumes:
+  oscar_data:
