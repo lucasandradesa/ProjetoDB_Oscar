@@ -1,4 +1,9 @@
-# Relatório Técnico — Projeto Final de Banco de Dados
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Relatório — Projeto Final de Banco de Dados
 **Disciplina:** Banco de Dados — DCC/UFMG  
 **Professor:** Pedro H. Barros  
 **Dataset:** Oscar AMPAS — Winner Demographics (1927–2014)
