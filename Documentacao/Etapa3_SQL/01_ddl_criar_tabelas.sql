@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS filme     CASCADE;
 DROP TABLE IF EXISTS categoria CASCADE;
 DROP TABLE IF EXISTS edicao    CASCADE;
 
--- Remove tabelas do schema anterior (Brasileirão)
+-- Remove tabelas do schema anterior
 DROP TABLE IF EXISTS partida   CASCADE;
 DROP TABLE IF EXISTS temporada CASCADE;
 DROP TABLE IF EXISTS time      CASCADE;
