@@ -13,7 +13,6 @@ projetoFinalDB/
 ├── world_ampas_oscar_winner_demographics.csv   ← dataset original
 │
 ├── Documentacao/                               ← entregas do projeto (código, SQL, gráficos)
-│   ├── Etapa0_Exploracao/
 │   ├── Etapa1_ModeloER/
 │   ├── Etapa3_SQL/
 │   ├── Etapa4_EDA/
@@ -21,7 +20,6 @@ projetoFinalDB/
 │   └── apresentacao_oscar.pptx
 │
 ├── Aprendizado/                                ← registros de decisões e contexto
-│   ├── 00_rota_do_projeto.md
 │   ├── 01_entidades_regras.md
 │   ├── 02_modelo_relacional_normalizacao.md
 │   ├── grafico_oscar_exploracao.png
@@ -58,8 +56,6 @@ Este arquivo é lido **somente pelo script `02_carga_dados.py`**. Nenhum outro a
 Contém todas as entregas formais do projeto, organizadas por etapa de criação e desenvolvimento.
 
 ---
-
-### `Etapa0_Exploracao/` Pré-processamento
 
 #### `01_exploracao.ipynb`
 Notebook Jupyter de exploração inicial do dataset. É o **primeiro arquivo a ser executado** no projeto.
@@ -237,103 +233,12 @@ Notebook Jupyter que conecta ao banco PostgreSQL e gera 5 gráficos PNG.
 6. **P4** — usa a query CTE+LAG para buscar os 10 maiores intervalos; plota barras horizontais verdes; salva `grafico_p4_intervalo_vitorias.png`
 7. **P5** — busca o primeiro vencedor não-branco por categoria; plota gráfico de dispersão (scatter) com anotações de nome e etnia; salva `grafico_p5_primeira_vitoria_nao_branca.png`
 
-**Arquivos gerados** (na mesma pasta `Etapa4_EDA/`):
+**Arquivos gerados**:
 - `grafico_p1_filmes_multivencedores.png`
 - `grafico_p2_diversidade_decada.png`
 - `grafico_p3_idade_categoria.png`
 - `grafico_p4_intervalo_vitorias.png`
 - `grafico_p5_primeira_vitoria_nao_branca.png`
-
----
-
-### `relatorio_tecnico.md`
-Documento Markdown com o relatório técnico completo do projeto. Cobre todas as etapas: motivação, dataset, ER, modelo relacional, normalização, DDL, carga, validação e análise exploratória com os principais achados.
-
-**Não é executado.** É o documento final de entrega escrita.
-
----
-
-### `apresentacao_oscar.pptx`
-Apresentação PowerPoint com 14 slides. Gerada pelo script `gerar_slides.py`.
-
-**Não requer banco de dados.** O conteúdo é fixo (hardcoded no script gerador).
-
----
-
-## Pasta `Aprendizado/`
-
-Registros de decisões de projeto e contexto gerado durante o desenvolvimento. Não fazem parte da entrega formal, mas documentam o raciocínio por trás das escolhas.
-
----
-
-### `00_rota_do_projeto.md`
-Mapa dos 16 passos do projeto com status de cada um e registro das decisões tomadas (por que o Brasileirão foi descartado, por que `birthplace` ficou como texto livre, por que `CATEGORIA` virou tabela própria, etc.).
-
----
-
-### `01_entidades_regras.md`
-Documento com as entidades identificadas, seus atributos, e as regras de integridade definidas antes de escrever o DDL. Registra decisões como: `etnia NOT NULL`, `religiao` nullable estrutural, `PREMIO` como entidade associativa.
-
----
-
-### `02_modelo_relacional_normalizacao.md`
-Análise de normalização do esquema. Documenta por que o schema está em 3FN, o único caso-limite (`ano_nascimento` vs `data_nascimento`) e a decisão de manter ambas as colunas para preservar o único registro que tem `birth_year` mas não `birth_date` completa.
-
----
-
-### Arquivos remanescentes do dataset anterior
-- `brasileirao_limpo.csv` — CSV do Brasileirão Série A (dataset descartado)
-- `grafico_gols_exploracao.png` — gráfico gerado na exploração do Brasileirão
-
-Podem ser removidos sem impacto no projeto atual.
-
----
-
-## Fluxo de Execução Completo
-
-A sequência abaixo representa a ordem em que os arquivos foram criados e devem ser executados para reproduzir o projeto do zero:
-
-```
-[1] EXPLORAÇÃO
-    01_exploracao.ipynb
-    └── lê: world_ampas_oscar_winner_demographics.csv
-    └── produz: entendimento do domínio + grafico_oscar_exploracao.png
-
-[2] MODELAGEM (não executável — decisão humana)
-    diagrama_er.dbml  →  dbdiagram.io  →  oscar.png / oscar.svg
-
-[3] BANCO DE DADOS — criação das tabelas
-    01_ddl_criar_tabelas.sql
-    └── executa em: PostgreSQL (container oscar-db, banco oscar)
-    └── produz: 5 tabelas vazias com constraints e índices
-
-[4] CARGA DOS DADOS
-    02_carga_dados.py
-    └── lê: world_ampas_oscar_winner_demographics.csv
-    └── conecta em: PostgreSQL (oscar-db)
-    └── produz: 87 edições, 5 categorias, 335 filmes, 348 vencedores, 415 prêmios
-
-[5] VALIDAÇÃO
-    03_validacao_carga.sql
-    └── executa em: PostgreSQL (oscar-db)
-    └── confirma: integridade referencial, contagens, NULLs esperados
-
-[6] ANÁLISE — SQL
-    05_consultas_sql.sql
-    └── executa em: PostgreSQL (oscar-db)
-    └── responde: 5 perguntas investigativas
-
-[7] ANÁLISE — VISUALIZAÇÕES
-    06_visualizacoes.ipynb
-    └── conecta em: PostgreSQL (oscar-db)
-    └── produz: 5 arquivos PNG em Etapa4_EDA/
-
-[8] APRESENTAÇÃO
-    gerar_slides.py
-    └── produz: Documentacao/apresentacao_oscar.pptx
-```
-
----
 
 ## Pré-requisitos para Reprodução
 
