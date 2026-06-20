@@ -4,7 +4,7 @@
 -- =============================================================
 
 -- -------------------------------------------------------------
--- 1. Contagem por tabela (deve bater com o CSV)
+-- 1. Contagem por tabela
 -- -------------------------------------------------------------
 SELECT 'edicao'    AS tabela, COUNT(*) AS total FROM edicao    UNION ALL
 SELECT 'categoria',            COUNT(*)          FROM categoria UNION ALL
@@ -67,7 +67,6 @@ ORDER BY total DESC;
 
 -- -------------------------------------------------------------
 -- 8. Edições com número de prêmios diferente de 5
---    (podem existir edições incompletas no dataset)
 -- -------------------------------------------------------------
 SELECT e.ano, COUNT(*) AS premios_na_edicao
 FROM edicao e
